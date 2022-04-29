@@ -1,8 +1,18 @@
+@font-face {
+  font-family: "Archia";
+  src: url("../public/archia-bold-webfont.woff2") format("woff2"),
+    url("../public/archia-bold-webfont.woff") format("woff"),
+    url("../public/archia-bold-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica;
+  font-family: "Helvetica";
   -webkit-font-smoothing: antialiased;
 }
 
@@ -20,7 +30,7 @@ body,
   --color-2: #004fa3;
   --color-3: #003f83;
 
-  --color-b-1: #ffd602;
+  --color-b-1: #fccd0b;
   --color-b-2: #ffdf3d;
   --color-b-3: #ffe45f;
 
@@ -39,31 +49,109 @@ body {
   background-color: var(--color-ua-blue);
 }
 
-.welcome {
-  padding: 12px;
-  margin-top: 18px;
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .description {
   color: white;
-  max-width: 400px;
+  max-width: 600px;
   margin: auto;
   margin-top: 18px;
   text-align: center;
 }
 
 .welcome .controls {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 12px;
-  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 450px;
+  margin: auto;
+  margin-top: 30px;
+  grid-gap: 6px;
+}
+
+@media screen and (max-width: 500px) {
+  .welcome .controls {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.welcome .controls Button {
+  border-radius: 30px;
+  font-size: 1.25rem;
+}
+
+.welcome .controls Button span {
+  font-family: "Archia";
+}
+
+.welcome .controls Button#findTutor {
+  background-color: var(--color-b-1);
+  color: black;
 }
 
 .description p {
   margin-top: 12px;
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.About {
+  background-color: white;
+  margin-top: 30px;
+  padding: 30px 0px;
+}
+
+.aboutText {
+  max-width: 600px;
+  color: black;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin: auto;
+}
+
+.aboutText p {
+  margin: 24px 0px;
+}
+
+.About h2 {
+  text-align: center;
+  color: black;
+}
+
+.Stats {
+  padding: 42px 0px;
+  background-color: var(--color-b-1);
+}
+
+.Stats h2 {
+  text-align: center;
+}
+
+.statsItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.statsItem {
+  text-align: center;
+  color: black;
+}
+
+.statValue {
+  font-family: "Archia";
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.statDescription {
+  font-size: 1.25rem;
 }
 
 .members {
@@ -77,19 +165,25 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--color-2);
+  /* background-color: var(--color-2); */
   padding-bottom: 12px;
   border-radius: 3px;
 }
 
 .team {
+  background-color: white;
+  padding: 30px 0px;
+}
+
+.members {
   max-width: 600px;
   margin: auto;
-  margin-top: 30px;
 }
 
 .team h2 {
   text-align: center;
+  color: var(--color-2);
+  margin-bottom: 30px;
 }
 
 .memberPhoto {
@@ -100,13 +194,18 @@ body {
 }
 
 .memberText {
-  color: white;
+  color: black;
   text-align: center;
   font-size: 1.25rem;
 }
 
+.memberTitle {
+  font-weight: 800;
+}
+
 h1 {
-  font-size: 2.25rem;
+  font-family: "Archia";
+  font-size: 3rem;
   margin: auto;
   display: block;
   color: white;
@@ -115,36 +214,15 @@ h1 {
 }
 
 h2 {
+  font-family: "Archia";
   color: white;
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   margin: 15px 0px;
-}
-
-:global(.mantine-Button-filled) {
-  font-size: 1.5rem;
-  /* border: 1px solid red; */
   font-weight: 600;
 }
 
-:global(.btn) {
-  font-size: 1.5rem;
-}
-
-:global(button) {
-  outline: 0;
-  border: 0;
-}
-
-:global(button span) {
-  text-align: center;
-}
-
-button:disabled {
-  opacity: 0.5;
-}
-
-button:disabled:hover {
-  pointer-events: none;
+h3 {
+  font-family: "Archia";
 }
 
 .Logo {
@@ -164,6 +242,18 @@ button:disabled:hover {
   margin: auto;
 }
 
+@media screen and (max-width: 800px) {
+  .statsItems {
+    grid-template-columns: 1fr;
+  }
+
+  .description,
+  .members,
+  .aboutText {
+    max-width: 450px;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .main {
     max-width: 500px;
@@ -173,5 +263,66 @@ button:disabled:hover {
 @media screen and (max-width: 500px) {
   .members {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+.Faq {
+  background-color: var(--color-1);
+  padding: 48px 0px;
+  color: white;
+}
+
+.Faq h2 {
+  text-align: center;
+}
+
+.questionsList {
+  max-width: 450px;
+  margin: auto;
+}
+
+.questionItem {
+  margin-top: 30px;
+}
+
+.questionItem:first-of-type {
+  margin-top: 0px;
+}
+
+.question {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+
+  color: var(--color-b-1);
+}
+
+.answer {
+  /* border: 1px solid blue; */
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.Footer {
+  background-color: var(--color-2);
+  color: white;
+  padding: 12px;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .Faq,
+  .contactList,
+  .aboutText,
+  .description,
+  .controls {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .questionsList {
+    max-width: 600px;
   }
 }

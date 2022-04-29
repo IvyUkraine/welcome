@@ -2,12 +2,15 @@ import React, { Component } from "react";
 
 const Team = () => {
   const members = [
-    { name: "Konstantin Papadopoulos", title: "Founder", image: "dummy.svg" },
-    { name: "John Smith", title: "Founder", image: "dummy.svg" },
-    { name: "John Smith", title: "Founder", image: "dummy.svg" },
-    { name: "John Smith", title: "Founder", image: "dummy.svg" },
-    { name: "John Smith", title: "Founder", image: "dummy.svg" },
-    { name: "John Smith", title: "Founder", image: "dummy.svg" },
+    { name: "Anonim Anonimowy", title: "Founder", image: "dummy2.svg" },
+    { name: "Anonim Anonimowy", title: "Founder", image: "dummy2.svg" },
+    { name: "Anonim Anonimowy", title: "Founder", image: "dummy2.svg" },
+    { name: "Anonim Anonimowy", title: "Founder", image: "dummy2.svg" },
+    { name: "Anonim Anonimowy", title: "Founder", image: "dummy2.svg" },
+    { name: "Anonim Anonimowy", title: "Founder", image: "dummy2.svg" },
+    { name: "Anonim Anonimowy", title: "Founder", image: "dummy2.svg" },
+    { name: "Anonim Anonimowy", title: "Founder", image: "dummy2.svg" },
+    { name: "Anonim Anonimowy", title: "Founder", image: "dummy2.svg" },
   ];
   return (
     <div className="team">
