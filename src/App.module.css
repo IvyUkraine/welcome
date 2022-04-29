@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+}
+
+/* note: google cdn is not gdpr compliant, switch to local files later */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap");
+
+:root {
+  --color-1: #0058b7;
+  --color-2: #004fa3;
+  --color-3: #003f83;
+
+  --color-b-1: #ffd602;
+  --color-b-2: #ffdf3d;
+  --color-b-3: #ffe45f;
+
+  --color-ua-blue: #0058b7;
+  --color-ua-yellow: #ffd602;
+
+  --max-width: 320px;
+}
+
+/* rem */
+html {
+  font-size: 12px;
+}
+
+body {
+  background-color: var(--color-ua-blue);
+}
+
+.welcome {
+  padding: 12px;
+  margin-top: 18px;
+}
+
+.description {
+  color: white;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.welcome .controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.description p {
+  margin-top: 12px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.members {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+}
+
+.member {
+  /* border: 1px solid lime; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-2);
+  padding-bottom: 12px;
+  border-radius: 3px;
+}
+
+.team {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.team h2 {
+  text-align: center;
+}
+
+.memberPhoto {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-bottom: 12px;
+}
+
+.memberText {
+  color: white;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin: auto;
+  display: block;
+  color: white;
+  text-align: center;
+  margin-top: 12px;
+}
+
+h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 15px 0px;
+}
+
+:global(.mantine-Button-filled) {
+  font-size: 1.5rem;
+  /* border: 1px solid red; */
+  font-weight: 600;
+}
+
+:global(.btn) {
+  font-size: 1.5rem;
+}
+
+:global(button) {
+  outline: 0;
+  border: 0;
+}
+
+:global(button span) {
+  text-align: center;
+}
+
+button:disabled {
+  opacity: 0.5;
+}
+
+button:disabled:hover {
+  pointer-events: none;
+}
+
+.Logo {
+  width: 100px;
+  margin: auto;
+}
+
+.app {
+  background-color: var(--color-ua-blue);
+  padding-bottom: 18px;
+  font-family: "Helvetica", serif;
+  overflow: hidden;
+}
+
+.main {
+  max-width: 350px;
+  margin: auto;
+}
+
+@media screen and (min-width: 1000px) {
+  .main {
+    max-width: 500px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .members {
+    grid-template-columns: 1fr 1fr;
+  }
+}
